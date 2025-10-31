@@ -73,6 +73,12 @@ class TestHashTable:
         assert table["B"] == 2
         assert table["C"] == 3
 
+        index_A = table._hash("A")
+        index_B = table._hash("B") 
+        index_C = table._hash("C")
+    
+        assert len(set([index_A, index_B, index_C])) < 3
+
     def test_resize(self):
         """
         Automatic resizing after adding
